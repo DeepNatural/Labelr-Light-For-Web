@@ -1,7 +1,7 @@
 import * as types from './types'
 
 export default {
-  [types.ANNOTATION_HEADER_BUTTON_SUBMIT]: '제출하기',
+  [types.ANNOTATION_HEADER_BUTTON_SUBMIT]: '저장하기',
   [types.ANNOTATION_HEADER_BUTTON_ENDTASK]: '나가기',
   [types.ANNOTATION_HEADER_BUTTON_HISTORY]: '검수이력',
   [types.ANNOTATION_HEADER_BUTTON_SAVE]: '저장',

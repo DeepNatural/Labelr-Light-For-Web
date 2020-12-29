@@ -26,15 +26,6 @@
       <dn-ui-icon name="night" />
     </div>
 
-    <div class="progress-wrapper">
-      <div>
-        <dn-ui-icon type="simple-line-icons" name="clock" size="12" />
-      </div>
-      <div>
-        <annotation-progress-bar v-model="progress" />
-      </div>
-    </div>
-
     <div class="skip-wrapper small">
       <div v-if="skip.use" class="skip-checkbox">
         <dn-ui-checkbox
@@ -46,12 +37,6 @@
     </div>
 
     <div class="action-wrapper">
-      <!-- 공통으로 보이는 버튼 (나가기) -->
-      <dn-ui-button @click="$refs.$exit.show()" size="small" color="secondary">
-        {{ $t('annotation.header.button.endTask') }}
-      </dn-ui-button>
-
-      <!-- 작업 모드일 경우 보여줄 버튼 (제출하기) -->
       <template v-if="isTaskMode">
         <dn-ui-button
           @click="$refs.$submit[0].show()"
@@ -95,14 +80,12 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import AnnotationProgressBar from './ProgressBar'
 import BasicModal from '../../Modal/Basic.vue'
 
 export default {
   name: 'DNAnnotationHeader',
 
   props: {
-    progress: Number,
     title: String,
     useTitle: {
       type: Boolean,
@@ -158,7 +141,6 @@ export default {
   },
 
   components: {
-    AnnotationProgressBar,
     BasicModal,
   },
 }
