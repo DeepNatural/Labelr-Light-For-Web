@@ -1,0 +1,62 @@
+$color-red: #ff4949;
+$color-g-blue: #00c1c6;
+$color-violet: #aa69ff;
+$color-blue: #008eff;
+$color-orange: #ff9800;
+$color-dark-blue: #2c2c44;
+$color-black-blue: #1f1f2f;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-light-gray: #dadada;
+
+$color-dark-gray-dim: rgba(51, 51, 51, 0.2);
+$color-red-hover: #e84040;
+$color-dark-blue-hover: #212135;
+$color-white-dim: rgba(255, 255, 255, 0.1);
+$color-blue-hover: #007de0;
+
+$very-light-pink: #efefef;
+$color-in-active: #919191;
+$color-dark-gray: #333333;
+$color-white-hover: #fbfbfb;
+
+$brownish-grey: #777777;
+$pale-grey: #f9f9fb;
+$adb-bluetext: #007adb;
+$kermit-green: #4cac00;
+
+$themes: (
+  day: (
+    background-color: #fff,
+    font-color: #000,  
+    
+    sets: (
+      primary: $color-blue,
+      secondary: $color-dark-blue,
+      // success: '',
+      error: $color-red,
+      red: $color-red
+      // warn: '',
+      // info: '',
+      // positive: '',
+      // negative: ''
+    )
+  ),
+  
+  night: (
+    background-color: $color-black-blue,
+    font-color: #fff,
+  
+    sets: (
+      primary: $color-blue,
+      secondary: $color-dark-blue,
+      // success: '',
+      error: $color-red,
+      red: $color-red
+      // warn: '',
+      // info: '',
+      // positive: '',
+      // negative: ''
+    )
+  )
+);

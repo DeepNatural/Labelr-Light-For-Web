@@ -1,0 +1,40 @@
+@import './theme.scss';
+
+.flex {
+  display: flex;
+
+  $directions: row, row-reverse, column, column-reverse;
+
+  @each $direction in $directions {
+    &.#{$direction} {
+      flex-direction: $direction;
+    }
+  }
+}
+
+.items {
+  $list: center, end, start, flex-end, flex-start, revert;
+
+  @each $value in $list {
+    &-#{$value} {
+      align-items: $value;
+    }
+  }
+}
+
+.justify {
+  $list: (
+    'center': center,
+    'end': flex-end,
+    'start': flex-start,
+    'between': space-between,
+    'around': space-around,
+    'evenly': space-evenly,
+  );
+
+  @each $key, $value in $list {
+    &-#{$key} {
+      justify-content: $value;
+    }
+  }
+}

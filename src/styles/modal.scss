@@ -1,0 +1,316 @@
+@import './theme.scss';
+
+$primary: map-get(map-get(map-get($themes, day), sets), primary);
+
+.ui.container.fluid {
+  .annotation-container {
+    > .ui.dimmer {
+      background-color: transparentize(#2c2c44, 0.3);
+
+      .ui.modal {
+        top: initial;
+        left: initial;
+        height: auto;
+        max-height: 100%;
+        overflow: auto;
+        outline: initial;
+        border-radius: 0.25rem;
+        box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.16);
+
+        &.basic-modal {
+          width: 320px;
+
+          > .header:not(.ui) {
+            margin: 38px 0 1rem;
+            padding: 0;
+            text-align: center;
+            line-height: 1.5rem;
+            font-size: 1.125rem;
+            box-shadow: none;
+          }
+
+          > .content {
+            margin: 1rem 0 2rem;
+            padding: 0 20px;
+            text-align: center;
+            line-height: 1.25em;
+            font-size: 1rem;
+            color: #333;
+          }
+
+          > .actions {
+            display: flex;
+            padding: 0;
+            box-shadow: inset 0 1px 0 0 #efefef;
+
+            .ui.button.basic {
+              flex: 1;
+              margin: 0;
+              height: 3.5rem;
+              background: none !important;
+              box-shadow: none !important;
+              font-weight: 500;
+              font-size: 1rem;
+              opacity: 0.8;
+
+              &:hover {
+                opacity: 1;
+              }
+
+              &:not(.primary) {
+                color: #777;
+              }
+            }
+          }
+        }
+
+        &.reject-dialog,
+        &.reject-modal {
+          strong {
+            font-weight: 500;
+          }
+
+          .reviewer-wrapper {
+            margin-left: 8px;
+            font-size: 13px;
+
+            .reviewer {
+              margin-left: 1rem;
+            }
+          }
+
+          .comments-wrapper {
+            margin: 1rem 0 0.875rem;
+
+            textarea {
+              padding: 0.5rem;
+              width: 100%;
+              border: none;
+              font-size: 15px;
+              font-family: 'Noto Sans KR', sans-serif !important;
+              resize: none;
+              outline: none;
+
+              &::placeholder {
+                color: #dadada;
+              }
+
+              &:disabled {
+                background-color: inherit;
+              }
+
+              &:focus {
+                border-color: $primary;
+              }
+            }
+          }
+
+          .attach-file-wrapper {
+            .ui.button.basic {
+              display: inline-flex;
+              padding: 0;
+              box-shadow: none;
+              width: auto;
+              align-items: center;
+            }
+
+            input[type='file'] {
+              display: none;
+            }
+
+            .attach-file-list {
+              padding-left: 1rem;
+              margin-bottom: 50px;
+
+              > div {
+                display: flex;
+                padding: 0 0.5rem;
+                align-items: center;
+
+                span {
+                  width: 180px;
+                  max-width: 180px;
+                  margin-right: 1rem;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  line-height: 1rem;
+                }
+              }
+            }
+          }
+
+          .actions {
+            position: absolute;
+            padding: 0;
+            right: 50px;
+            bottom: 40px;
+
+            .ui.button {
+              padding: 0 1rem;
+              width: auto;
+              height: 32px;
+              font-weight: 500;
+
+              &.basic {
+                background: none !important;
+                box-shadow: none !important;
+                border: 1px solid #e1e1e1;
+              }
+            }
+          }
+        }
+
+        & > .icon:first-child + *,
+        & > :first-child:not(.icon) {
+          border-top-left-radius: 0.25rem;
+          border-top-right-radius: 0.25rem;
+        }
+
+        & > :last-child {
+          border-bottom-left-radius: 0.25rem;
+          border-bottom-right-radius: 0.25rem;
+        }
+
+        & > .header {
+          padding: 1.125rem 1.25rem;
+          border-bottom: 0;
+          box-shadow: inset 0 -1px 0 0 #efefef;
+          font-family: 'Noto Sans KR', sans-serif !important;
+        }
+
+        & > .header:not(.ui) {
+          line-height: 1.25rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: #000;
+        }
+
+        & > i.icon.close {
+          top: 1.125rem;
+          right: 1.25rem;
+          margin: 0;
+          padding: 0;
+          width: 1.25rem;
+          height: 1.25rem;
+          background-image: url('../icons/close.svg');
+          font-size: 0;
+        }
+
+        & > .content {
+          padding: 1.25rem;
+          background-color: transparent;
+          line-height: 1.125rem;
+          font-size: 0.75rem;
+          color: #888;
+
+          .header {
+            margin-bottom: 10px;
+            line-height: 1.25rem;
+            font-size: 0.875rem;
+            color: #000;
+          }
+        }
+
+        & > .actions {
+          padding: 1.25rem;
+          background: transparent;
+          border-top: none;
+
+          .ui.button {
+            margin: 0 0.5rem 0 0;
+            padding: 0;
+            width: 96px;
+            height: 32px;
+            font-weight: 400;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+
+            &.btn-confirm {
+              background-color: map-get(
+                map-get(map-get($themes, day), sets),
+                secondary
+              );
+              color: #fff;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.night {
+    .annotation-container {
+      > .ui.dimmer {
+        background-color: transparentize(#000, 0.3);
+
+        .ui.modal {
+          background-color: map-get(map-get($themes, night), background-color);
+          box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.48);
+
+          & > .header {
+            background-color: map-get(
+              map-get($themes, night),
+              background-color
+            );
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08),
+              inset 0 -1px 0 0 #11111d;
+          }
+
+          & > .header:not(.ui) {
+            color: #fff;
+          }
+
+          & > i.icon.close {
+            background-image: url('../icons/close-w.svg');
+          }
+
+          & > .content {
+            > header {
+              color: #fff;
+            }
+
+            color: $color-light-gray;
+          }
+
+          & > .actions {
+            box-shadow: inset 0 1px 0 0 $color-dark-blue;
+
+            .ui.button.basic {
+              opacity: 1;
+
+              &.primary {
+                color: transparentize($color-blue, 0.2) !important;
+
+                &:hover {
+                  color: transparentize($color-blue, 0) !important;
+                }
+              }
+
+              &:not(.primary) {
+                color: transparentize($color-white, 0.5) !important;
+
+                &:hover {
+                  color: transparentize($color-white, 0.4) !important;
+                }
+              }
+            }
+          }
+
+          &.reject-modal {
+            textarea {
+              color: white;
+              &:disabled {
+                background-color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

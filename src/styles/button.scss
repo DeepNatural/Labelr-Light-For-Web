@@ -1,0 +1,115 @@
+@import "./theme.scss";
+
+$button-colors: (
+  white: (default: #fff, hover: $color-white-hover, color: $color-dark-gray),
+  red: (default: $color-red, hover: $color-red-hover, color: #fff),
+  dark-blue: (default: $color-dark-blue, hover: $color-dark-blue-hover, color: #fff),
+  color-blue: (default: $color-blue, hover: $color-blue-hover, color: #fff),
+  primary: (default: $color-blue, hover: $color-blue-hover, color: #fff),
+  secondary: (default: $color-dark-blue, hover: $color-dark-blue-hover, color: #fff),
+);
+
+body {
+  .ui.button {
+    padding: .6875em 1.3125em .6875em;
+    background-color: #ebebeb;
+    border-radius: .25rem;
+    line-height: 1em;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: rgba(0, 0, 0, .9);
+  
+    @media (max-width: 768px) {
+      padding: .75em 1.25em .75em;
+    }
+
+    &.small {
+      font-size: .75rem;
+    }
+
+    &.dn {
+      margin: 0;
+      padding: 4px 1rem;
+      background-color: #fff;
+      border-radius: 4px;
+      line-height: 1.25rem;
+      height: 2rem;
+      font-weight: 500;
+      font-size: .75rem;
+      color: $color-dark-gray;
+      transition: background-color 0s;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+
+      &:hover {
+        background-color: $color-white-hover;
+      }
+
+      &.large {
+        padding: 10px 1rem;
+        height: 2.5rem;
+      }
+
+      &.icon {
+        padding-left: 0.558rem;
+        padding-right: 0.558rem;
+      }
+
+      &.no-round {
+        border-radius: 0;
+      }
+
+      &.no-padding {
+        padding: 0;
+      }
+
+      &.fluid {
+        box-sizing: border-box;
+      }
+    }
+
+    &.fab {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+  }
+
+  @each $color, $sets in $button-colors {
+    .ui.button.dn {
+      &.#{$color} {
+        background-color: map-get($sets, default);
+        color: map-get($sets, color);
+
+        &:hover {
+          background-color: map-get($sets, hover);
+        }
+      }
+    }
+  }
+
+  *[role="button"] {
+    cursor: pointer;
+  }
+
+  .ui.fluid.container.night {
+    .ui.button {
+      &.dn {
+        background-color: #313048;
+        color: #ebebeb;
+      }
+    }
+
+    @each $color, $sets in $button-colors {
+      .ui.button.dn {
+        &.#{$color} {
+          background-color: map-get($sets, default);
+          color: map-get($sets, color);
+  
+          &:hover {
+            background-color: map-get($sets, hover);
+          }
+        }
+      }
+    }
+  }
+}

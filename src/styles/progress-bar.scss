@@ -1,0 +1,35 @@
+@import "./theme.scss";
+
+$height: 4px;
+
+body {
+  .dn-progress-bar {
+    height: $height;
+    cursor: pointer;
+
+    .progress-bar-background {
+      height: $height;
+      background-color: #efefef;
+      border-radius: 2px;
+      overflow: hidden;
+
+      .progress-bar-value {
+        width: 100%;
+        height: $height;
+        background-color: #00c1c6;
+        border-radius: 2px;
+        transition-property: transform;
+        transition-duration: .05s;
+        transition-timing-function: ease-in;
+      }
+    }
+  }
+
+  .ui.fluid.container.night {
+    .dn-progress-bar {
+      .progress-bar-background {
+        background-color: #000;
+      }
+    }
+  }
+}

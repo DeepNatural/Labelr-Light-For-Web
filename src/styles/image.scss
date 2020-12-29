@@ -1,0 +1,14 @@
+@import "./theme.scss";
+
+body {
+  .dn-image.ui.segment {
+    display: inline-flex;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

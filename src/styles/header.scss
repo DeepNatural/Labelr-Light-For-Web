@@ -1,0 +1,47 @@
+@import "./theme.scss";
+
+$headers: (
+  h1: (
+    font-size: 3rem,
+    line-height: 1.25em,
+    font-weight: 700
+  ),
+  h2: (
+    font-size: 2.25rem,
+    line-height: 1.25em,
+    font-weight: 700
+  ),
+  h3: (
+    font-size: 1.75rem,
+    line-height: 1.25em,
+    font-weight: 500
+  ),
+  h4: (
+    font-size: 1.125rem,
+    line-height: 1.22222222em,
+    font-weight: 400
+  )
+);
+
+body {
+  .ui.fluid.container.day,
+  .ui.fluid.container.night {
+    @each $tag, $styles in $headers {
+      #{$tag}, #{$tag}.ui.header {
+        margin: 0 0 1rem;
+        line-height: map-get($styles, line-height);
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: map-get($styles, font-size);
+        font-weight: map-get($styles, font-weight);
+      }
+    }
+
+    .ui.header {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .ui.header:first-child {
+      margin-top: 0;
+    }
+  }
+}

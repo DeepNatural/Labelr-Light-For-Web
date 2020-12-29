@@ -1,0 +1,67 @@
+// enter -> enter-to(== leave) -> leave-to
+
+/**
+ * slide transition
+ */
+ .slide-enter-active {
+  transition: opacity .2s ease-in-out .1s, transform .2s ease-in-out;
+}
+
+.slide-leave-active {
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out  .1s;
+}
+
+.slide-enter, .slide-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/**
+ * slider transition
+ */
+.slider-enter-active, .slider-leave-active {
+  transition: opacity .1s ease-in-out, transform .2s ease-in-out;
+}
+
+.slider-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slider-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slider-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/**
+ * side-folding transition
+ */
+.side-folding-enter-active,
+.side-folding-leave-active {
+  transition: opacity .25s ease-in-out,
+              transform .25s ease-in-out,
+              width .25s ease-in-out;
+}
+
+.side-folding-enter {
+  transform: translateX(-15%);
+  opacity: 0;
+  width: 0;
+}
+
+.side-folding-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+  width: 320px;
+}
+
+.side-folding-leave-to {
+  transform: translateX(-15%);
+  opacity: 0;
+  width: 0;
+}

@@ -1,0 +1,42 @@
+@import "./theme.scss";
+
+body {
+  .ui.fluid.container.day,
+  .ui.fluid.container.night {
+    .dn-checkbox {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      outline: none;
+  
+      input[type="checkbox"],
+      input[type="radio"] {
+        display: none;
+
+        &:disabled {
+          opacity: .5;
+
+          & ~ label {
+            opacity: .5;
+          }
+        }
+  
+        & ~ label {
+          display: flex;
+          align-items: center;
+          font-size: .875rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .ui.fluid.container.night {
+    .dn-checkbox {
+      input[type="checkbox"],
+      input[type="radio"] {
+        
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+$wides: (
+  'one': 1,
+  'two': 2,
+  'three': 3,
+  'four': 4,
+  'five': 5,
+  'six': 6,
+  'seven': 7,
+  'eight': 8,
+  'nine': 9,
+  'ten': 10,
+  'eleven': 11,
+  'twelve': 12,
+  'thirteen': 13,
+  'fourteen': 14,
+  'fifteen': 15,
+  'sixteen': 16
+);
+
+body {
+  .ui.fluid.container.day,
+  .ui.fluid.container.night {
+    .ui.grid {
+      margin-top: -.25rem;
+      margin-bottom: -.25rem;
+      margin-left: -.25rem;
+      margin-right: -.25rem;
+
+      > .row {
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+      }
+
+      .column:not(.row),
+      .row>.column {
+        margin-left: .25rem;
+        margin-right: .25rem;
+        padding-left: 0;
+        padding-right: 0;
+        width: calc(6.25% - .5rem);
+      }
+
+      @each $wide, $number in $wides {
+        > .column.row>[class*="#{$wide} wide"].column,
+        > .row>[class*="#{$wide} wide"].column,
+        > [class*="#{$wide} wide"].column {
+          width: calc(#{100% * ($number / 16)} - .5rem) !important;
+        }
+      }
+
+      @each $column, $number in $wides {
+        > [class*="#{$column} column"].row > .column {
+          width: calc(#{100% / $number} - .5rem) !important;
+        }
+      }
+    }
+  }
+}

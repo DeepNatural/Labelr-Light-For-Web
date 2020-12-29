@@ -1,0 +1,176 @@
+@import "./theme.scss";
+
+$colors: (
+  black: $color-black,
+  g-blue: $color-g-blue,
+  black-blue: $color-black-blue,
+  dark-blue: $color-dark-blue,
+  blue: $color-blue,
+  white: $color-white,
+  orange: $color-orange,
+  red: $color-red,
+  violet: $color-violet,
+  light-gray: $color-light-gray,
+);
+
+body {
+  .dn-labeling-group {
+    box-shadow: inset 0 -1px 0 0 #efefef;
+
+    &.selected {
+      .labeling-group-name {
+        box-shadow: inset 0 -2px 0 0 map-get($colors, g-blue) !important;
+      }
+    }
+  
+    .dn.ui.button {
+      padding: 0;
+      background: none !important;
+      box-shadow: none !important;
+
+      &:active {
+        background: rgba(196, 196, 196, .1) !important;
+      }
+    }
+  
+    .btn-add.dn.ui.button {
+      display: block;
+      margin: 0 0 0 1.25rem;
+      width: calc(100% - 1.25rem);
+      height: 2rem;
+      border: 0 !important;
+      box-shadow: none !important;
+      text-align: left;
+      color: $brownish-grey !important;
+  
+      &:hover, &:active, &:focus {
+        background: none !important;
+      }
+    }
+  
+    .labeling-group-name {
+      position: relative;
+      display: flex;
+      padding: 0;
+      line-height: 1.25rem;
+      align-items: center;
+      box-shadow: inset 0 -1px 0 0 #efefef;
+      cursor: pointer;
+      transition: background-color .25s ease-in-out,
+                  box-shadow .25s ease-in-out;
+
+      &:hover {
+        background-color: rgba(196, 196, 196, .1);
+      }
+  
+      .labeling-color {
+        display: block;
+        width: .5rem;
+        height: .5rem;
+        background-color: #f00;
+        border-radius: 50%;
+        content: '';
+      }
+
+      @each $name, $color in $colors {
+        .labeling-color.#{$name} {
+          background-color: $color;
+        }
+      }
+  
+      .name {
+        display: flex;
+        padding: 0 1.25rem 0 .75rem;
+        flex: 1;
+  
+        .shortcut {
+          margin-left: .5rem;
+          padding-right: .25rem;
+          border-radius: 4px;
+          background-color: $very-light-pink;
+          color: $color-in-active;
+          
+          span {
+            margin-left: 0;
+            font-size: 10px;
+          }
+  
+          .dn-icon {
+            opacity: .35;
+          }
+        }
+      }
+    }
+  
+    .labeling-list {
+      margin-left: 1.25rem;
+  
+      .label-item {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        box-shadow: inset 0 -1px 0 0 #efefef;
+        color: $brownish-grey;
+        cursor: pointer;
+        transition: background-color .25s ease-in-out, padding-left .1s ease-in-out;
+
+        &:hover {
+          background-color: rgba(196, 196, 196, .1);
+        }
+
+        &:active {
+          padding-left: .5rem;
+        }
+  
+        > span {
+          flex: 1;
+        }
+
+        .dn.ui.button {
+          width: 1.25rem;
+          border-radius: 0;
+        }
+  
+        i {
+          color: $color-dark-gray;
+        }
+      }
+    }
+  }
+
+  .ui.fluid.container.night {
+    .dn-labeling-group {
+      box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.04);
+  
+      .btn-add.dn.ui.button {
+        color: #fff !important;
+      }
+  
+      .labeling-group-name {
+        box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.04);
+  
+        .name {
+          .shortcut {
+            background-color: rgba(0, 0, 0, .5);
+            color: $color-light-gray;
+
+            .dn-icon {
+              opacity: .45;
+            }
+          }
+        }
+      }
+  
+      .labeling-list {
+        .label-item {
+          box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.04);
+          color: #fff;
+  
+          .dn.ui.button {
+            color: rgba(255, 255, 255, .2) !important;
+          }
+        }
+      }
+    }
+  }
+}
