@@ -81,7 +81,7 @@ export const AnnotationToolMixin = {
         })
       }
 
-      return Promise.reject(new Error('작업자 모드에서만 제출이 가능합니다.'))
+      return Promise.reject(new Error('작업자 모드에서만 저장이 가능합니다.'))
     },
 
     /**

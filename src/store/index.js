@@ -4,11 +4,7 @@ import annotationTool from './annotationTool'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-  modules: {
-    intercom: { namespaced: true }
-  }
-})
+const store = new Vuex.Store
 
 store.registerModule('annotationTool', annotationTool)
 

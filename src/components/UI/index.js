@@ -2,7 +2,6 @@ import Button from './Button'
 import Canvas from './Canvas'
 import Checkbox from './Checkbox/index.vue'
 import CheckboxGroup from './Checkbox/group'
-import Dropdown from './Dropdown/index.vue'
 import Icon from './Icon'
 import Image from './Image'
 import Input from './Input'
@@ -21,7 +20,6 @@ const DNUIComponents = {
   'dn-ui-canvas': Canvas,
   'dn-ui-checkbox': Checkbox,
   'dn-ui-checkbox-group': CheckboxGroup,
-  'dn-ui-dropdown': Dropdown,
   'dn-ui-icon': Icon,
   'dn-ui-image': Image,
   'dn-ui-img': Image,

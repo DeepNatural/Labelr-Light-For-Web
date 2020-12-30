@@ -38,28 +38,6 @@ const BaseLayout = {
       >
         {scopedSlots.default()}
 
-        <dn-ui-modal
-          ref="$instruction"
-          close
-          settings={{
-            duration: 0,
-            context: '.annotation-container',
-            centered: true
-          }}
-        >
-          <h4 slot="title">
-            {parent.$t('annotation.instruction.title')}
-          </h4>
-          
-          {renderInstructionDetail(scopedSlots.instructionDetail)}
-
-          <template slot="actions">
-            <dn-ui-button class="btn-confirm approve" color="dark-blue">
-              {parent.$t('annotation.instruction.detail.button.okay')}
-            </dn-ui-button>
-          </template>
-        </dn-ui-modal>
-
         <AlertModal ref="$dnAlert" />
       </main>
     )

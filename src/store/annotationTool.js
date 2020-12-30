@@ -38,7 +38,6 @@ const annotationTool = {
   namespaced: true,
   
   state: {
-    visibleInstruction: false,
     theme: fetchTheme(),
     mode: 'task',
     result: {},
@@ -84,10 +83,6 @@ const annotationTool = {
   },
 
   mutations: {
-    TOGGLE_INSTRUCTION(state) {
-      state.visibleInstruction = !state.visibleInstruction
-    },
-
     SET_THEME(state, { theme }) {
       localStorage.setItem('DN_THEME', theme)
       

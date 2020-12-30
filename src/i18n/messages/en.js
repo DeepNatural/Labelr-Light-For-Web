@@ -25,9 +25,9 @@ export default {
   [types.ANNOTATION_MODAL_ALERT_ACTIONS_BUTTON_CONFIRM]: 'Confirm',
   [types.ANNOTATION_MODAL_ALERT_ACTIONS_BUTTON_CANCEL]: 'Cancel',
 
-  [types.ANNOTATION_MODAL_SUBMIT_TITLE]: '제출',
-  [types.ANNOTATION_MODAL_SUBMIT_DESCRIPTION]: '제출 이후에는 수정이 불가능합니다<br />충분히 검토하셨나요?',
-  [types.ANNOTATION_MODAL_SUBMIT_ACTIONS_BUTTON_SUBMIT]: '제출',
+  [types.ANNOTATION_MODAL_SUBMIT_TITLE]: '저장',
+  [types.ANNOTATION_MODAL_SUBMIT_DESCRIPTION]: '저장 이후에는 작업 결과물을 다운로드<br />받고 작업도구가 새로고침 됩니다.<br />계속 진행하시겠습니까?',
+  [types.ANNOTATION_MODAL_SUBMIT_ACTIONS_BUTTON_SUBMIT]: '저장',
   [types.ANNOTATION_MODAL_SUBMIT_ACTIONS_BUTTON_CANCEL]: '아니오',
 
   [types.ANNOTATION_MODAL_ACCEPT_TITLE]: 'Accept',
@@ -58,7 +58,7 @@ export default {
   [types.ANNOTATION_MODAL_SAVEBYREVIEWER_ACTIONS_BUTTON_CANCEL]: 'Cancel',
 
   [types.ANNOTATION_MODAL_EXIT_TITLE]: 'Exit',
-  [types.ANNOTATION_MODAL_EXIT_DESCRIPTION]: '정말로 나가시겠어요?<br />나가면 제출되지 않은 작업은 삭제됩니다.',
+  [types.ANNOTATION_MODAL_EXIT_DESCRIPTION]: '정말로 나가시겠어요?<br />나가면 저장되지 않은 작업은 삭제됩니다.',
   [types.ANNOTATION_MODAL_EXIT_REVIEWDESCRIPTION]: '정말로 나가시겠어요?',
   [types.ANNOTATION_MODAL_EXIT_ACTIONS_BUTTON_EXIT]: 'Exit',
   [types.ANNOTATION_MODAL_EXIT_ACTIONS_BUTTON_CANCEL]: 'Cancel',
