@@ -1,13 +1,6 @@
 <template>
-  <div
-    class="ui container fluid"
-    :class="$store.state.annotationTool.theme"
-  >
-    <dn-annotation-tool-polygon
-      :labels="labels"
-      :context="context"
-      @request="onRequest"
-    >
+  <div class="ui container fluid" :class="theme" style="overflow: hidden;">
+    <dn-annotation-main no-skip>
       <description main>
         <header>
           <!-- 작업도구 제목 -->
@@ -18,70 +11,44 @@
           </div>
         </div>
       </description>
-    </dn-annotation-tool-polygon>
-
-    <div
-      v-if="!context.url"
-      class="flex items-center justify-center img-file-upload"
-    >
-      <div>
-        <div>이미지를 업로드 하세요</div>
-        <dn-ui-button
-          :file="{ accept: 'image/*' }"
-          @inputFile="onInputFile"
-        >
-          이미지 파일찾기
-        </dn-ui-button>
-      </div>
-    </div>
+    </dn-annotation-main>
   </div>
 </template>
 
 <script>
-import dayjs from 'dayjs'
+import AnnotationHeader from '@/components/Layout/AnnotationHeader/index.vue'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Main',
-  
-  data: () => ({
-    context: {
-      url: null
+
+  data: () => ({}),
+
+  components: {
+    AnnotationHeader,
+  },
+
+  computed: {
+    theme() {
+      return this.$store.state.annotationTool.theme
     },
-    labels: ['눈', '코'],
-    result: {}
-  }),
+
+    isNightTheme: {
+      get() {
+        return this.theme !== 'day'
+      },
+
+      set(isNightTheme) {
+        this.setTheme({ theme: isNightTheme ? 'night' : 'day' })
+      },
+    },
+  },
 
   methods: {
-    onRequest({ action, payload }) {
-      switch (action) {
-        case 'store':
-          this.result = payload.result
-          break
-        case 'submit':
-          this.download(payload.result)
-          location.reload()
-          break
-      }
-    },
-
-    onInputFile({ target }) {
-      this.context.url = URL.createObjectURL(target.files[0])
-    },
-
-    download(result) {
-      const fileName = `result_${dayjs().format('YYYYMMDDHHmmss')}.json`
-      const a = document.createElement('a')
-      const resultFile = new File(
-        [JSON.stringify(result)],
-        fileName,
-        { type: 'application/json', }
-      )
-      a.href = URL.createObjectURL(resultFile)
-      a.download = fileName
-      a.click()
-      URL.revokeObjectURL(a.href)
-    }
-  }
+    ...mapMutations('annotationTool', {
+      setTheme: 'SET_THEME',
+    }),
+  },
 }
 </script>
 
@@ -99,7 +66,7 @@ export default {
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     line-height: 1.6;
-    letter-spacing: -.1px;
+    letter-spacing: -0.1px;
     font-size: 15px;
     color: #fff;
 
