@@ -1,0 +1,10 @@
+#dn-image-annotation {
+  .shortcut {
+    &-img {
+      position: absolute;
+      bottom: 4rem;
+      left: 1.5rem;
+      box-shadow: 0 2px 4px grey;
+    }
+  }
+}

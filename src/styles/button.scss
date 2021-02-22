@@ -71,6 +71,10 @@ body {
       position: absolute;
       bottom: 1.5rem;
       right: 1.5rem;
+
+      &.left {
+        left: 1.5rem;
+      }
     }
   }
 

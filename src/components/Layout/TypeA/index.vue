@@ -2,13 +2,16 @@
   <dn-annotation-base-layout type="A">
     <AnnoationHeader
       :progress="progress"
-      :use-title="false"
+      :use-title="!!headerTitle"
+      :title="headerTitle"
       :use-theme="useTheme"
     />
 
-    <section :class="{
-      'annotation-main-container': true
-    }">
+    <section
+      :class="{
+        'annotation-main-container': true,
+      }"
+    >
       <div class="main-container">
         <div v-if="title" class="title-wrapper">
           <h4>
@@ -24,9 +27,7 @@
     </section>
 
     <div class="toolbar-container small flex items-center justify-between">
-      <div class="control-instruction-wrapper">
-        
-      </div>
+      <div class="control-instruction-wrapper"></div>
 
       <div class="toolbar-wrapper">
         <slot name="toolbar" />
@@ -37,7 +38,10 @@
           <span>
             {{ $t('annotation.footer.button.help') }}
           </span>
-          <dn-ui-button basic style="padding-left: 0; padding-right: 0; width: 32px;">
+          <dn-ui-button
+            basic
+            style="padding-left: 0; padding-right: 0; width: 32px;"
+          >
             <dn-ui-icon name="help" />
           </dn-ui-button>
         </div>
@@ -69,8 +73,9 @@ class LayoutProps {
       config: Object,
       useTheme: {
         type: Boolean,
-        default: true
-      }
+        default: true,
+      },
+      headerTitle: String,
     }
 
     return props
@@ -83,13 +88,11 @@ export default {
   props: LayoutProps.toScheme(),
 
   computed: {
-    ...mapState('annotationTool', [
-      'taskRun',
-    ])
+    ...mapState('annotationTool', ['taskRun']),
   },
 
   components: {
-    AnnoationHeader
-  }
+    AnnoationHeader,
+  },
 }
 </script>

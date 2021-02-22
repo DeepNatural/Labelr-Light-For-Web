@@ -1,0 +1,61 @@
+#dn-annotation-main {
+  .title-wrapper {
+    h4 {
+      margin: 0 1rem;
+    }
+  }
+
+  .action-wrapper,
+  .toolbar-container {
+    display: none;
+  }
+
+  .annotation-main-container {
+    min-height: calc(100vh - 64px) !important;
+    max-height: calc(100vh - 64px) !important;
+  }
+
+  .ui.segment {
+    overflow-y: auto;
+  }
+
+  .tool-card {
+    padding: 1.5rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 100%;
+
+    .night & {
+      background-image: linear-gradient(to top right, #252539, #3b3b5b);
+    }
+
+    &-container {
+      padding: 1rem;
+      gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow-y: auto;
+
+      @media (min-width: 1600px) {
+        & {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+
+    &-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &-content {
+      margin-top: 1rem;
+    }
+
+    &-action {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+  }
+}

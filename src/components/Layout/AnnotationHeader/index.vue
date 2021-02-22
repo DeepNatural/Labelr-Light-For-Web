@@ -1,11 +1,14 @@
 <template>
   <header
     :class="{
-      'annotation-header': true
+      'annotation-header': true,
     }"
   >
     <div class="logo-wrapper">
-      <img :src="require('../../../assets/imgs/symbol.svg')" alt="DeepNatural" />
+      <img
+        :src="require('../../../assets/imgs/symbol.svg')"
+        alt="DeepNatural"
+      />
     </div>
 
     <div class="title-wrapper">
@@ -38,6 +41,9 @@
 
     <div class="action-wrapper">
       <template v-if="isTaskMode">
+        <dn-ui-button @click="$router.go(-1)" size="small" color="secondary">
+          {{ $t('annotation.header.button.endTask') }}
+        </dn-ui-button>
         <dn-ui-button
           @click="$refs.$submit[0].show()"
           size="small"
@@ -74,7 +80,6 @@
       }"
       @approve="() => $evEmitter.emit($evEmitter.types.ACTION, 'exit')"
     />
-
   </header>
 </template>
 
@@ -98,15 +103,9 @@ export default {
   },
 
   computed: {
-    ...mapState('annotationTool', [
-      'theme',
-      'skip',
-    ]),
+    ...mapState('annotationTool', ['theme', 'skip']),
 
-    ...mapGetters('annotationTool', [
-      'isValid',
-      'isTaskMode',
-    ]),
+    ...mapGetters('annotationTool', ['isValid', 'isTaskMode']),
 
     isNightTheme: {
       get() {
@@ -130,9 +129,7 @@ export default {
     },
   },
 
-  watch: {
-
-  },
+  watch: {},
 
   methods: {
     ...mapMutations('annotationTool', {
