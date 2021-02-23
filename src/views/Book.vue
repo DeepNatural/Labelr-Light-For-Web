@@ -14,7 +14,17 @@
     </dn-annotation-tool-book>
     <div v-if="!context.title" class="flex items-center justify-center img-file-upload">
       <div>
-        <div>책 정보가 담긴 JSON을 업로드 하세요</div>
+        <div>
+          {
+          "title": "책의 제목을 나타내는 프로퍼티입니다",
+          <br />"writer": "책의 저자를 나타내는 프로퍼티입니다",
+          <br />"date": "책의 출간일을 나타내는 프로퍼티입니다",
+          <br />"publisher": "책의 출판사를 나타내는 프로퍼티입니다",
+          <br />"text": "책의 본문을 나타내는 프로퍼티입니다"
+          }
+        </div>
+        <br />
+        <div>위와 같은 포맷을 가진, 책 정보가 담긴 JSON을 업로드 하세요</div>
         <dn-ui-button :file="{ accept: 'application/JSON' }" @inputFile="onInputFile">JSON 파일찾기</dn-ui-button>
       </div>
     </div>
