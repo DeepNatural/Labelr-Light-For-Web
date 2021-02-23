@@ -161,7 +161,7 @@ const DNBook = {
     /**
      * 책에 대한 정보를 렌더링합니다.
      *
-     * @param {import('@/components/AnnotationTools/DN/Book/vue').CreateElement} h
+     * @param {import('vue').CreateElement} h
      */
     renderBookInfo(h) {
       const { widgets, context } = this
@@ -208,7 +208,7 @@ const DNBook = {
     /**
      * 책의 본문을 렌더링합니다.
      *
-     * @param {import('@/components/AnnotationTools/DN/Book/vue').CreateElement} h
+     * @param {import('vue').CreateElement} h
      */
     renderBookText(h) {
       const { context } = this
@@ -231,7 +231,7 @@ const DNBook = {
     /**
      * 책의 요약문을 입력할 수 있는 곳을 렌더링합니다.
      *
-     * @param {import('@/components/AnnotationTools/DN/Book/vue').CreateElement} h
+     * @param {import('vue').CreateElement} h
      */
     renderBookSummary(h) {
       const {
@@ -265,7 +265,7 @@ const DNBook = {
     /**
      * 유저가 입력한 값에 따라 경고문을 렌더링합니다.
      *
-     * @param {import('@/components/AnnotationTools/DN/Book/vue').CreateElement} h
+     * @param {import('vue').CreateElement} h
      */
     renderWarning(h) {
       return (
@@ -296,7 +296,7 @@ const DNBook = {
 
   /**
    *
-   * @param @param {import('@/components/AnnotationTools/DN/Book/vue').CreateElement} h
+   * @param @param {import('vue').CreateElement} h
    */
   render(h) {
     const { progress, hasRejectReason, config } = this
