@@ -7,5 +7,5 @@ export default {
   ...UIComponents,
   ...LayoutComponents,
   ...GlobalComponents,
-  ...AnnotationTools
+  ...AnnotationTools,
 }

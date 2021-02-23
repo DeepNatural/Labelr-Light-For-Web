@@ -14,6 +14,7 @@ import ProgressBar from './ProgressBar'
 import RadioGroup from './RadioGroup'
 import SectionHeader from './SectionHeader'
 import Segment from './Segment'
+import Textarea from './Textarea'
 
 const DNUIComponents = {
   'dn-ui-button': Button,
@@ -33,6 +34,7 @@ const DNUIComponents = {
   'dn-ui-radio-group': RadioGroup,
   'dn-ui-section-header': SectionHeader,
   'dn-ui-segment': Segment,
+  'dn-ui-textarea': Textarea,
 }
 
 export default DNUIComponents

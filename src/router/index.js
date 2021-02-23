@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Main from '../views/Main.vue'
 import Polygon from '../views/Polygon.vue'
 import ImageAnnotation from '../views/ImageAnnotation.vue'
+import Book from '../views/Book.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/image-annotation',
     name: 'ImageAnnotation',
     component: ImageAnnotation,
+  },
+  {
+    path: '/book',
+    name: 'Book',
+    component: Book,
   },
 ]
 
