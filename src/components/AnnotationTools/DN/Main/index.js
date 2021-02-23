@@ -24,6 +24,11 @@ const DNMain = {
         description: 'Bounding Box & Polyline Tool',
         link: '/image-annotation',
       },
+      {
+        name: 'Book',
+        description: 'Summary Tool',
+        link: '/book',
+      },
     ],
   }),
 

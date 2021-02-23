@@ -1,0 +1,123 @@
+@import './theme.scss';
+
+$primary: map-get(map-get(map-get($themes, day), sets), primary);
+
+body {
+  .ui.fluid.container.day,
+  .ui.fluid.container.night {
+    .dn-textarea.field {
+      margin: 1.5rem 0;
+
+      > label {
+        display: block;
+        line-height: 1.71428571;
+        font-weight: 500;
+        font-size: 0.875rem;
+        color: $brownish-grey;
+        user-select: none;
+      }
+
+      .validation-message {
+        margin-top: 4px;
+        font-weight: 400;
+      }
+
+      &.error {
+        .ui.textarea textarea {
+          box-shadow: inset 0 -1px 0 0 $color-red;
+        }
+
+        .validation-message {
+          color: $color-red;
+        }
+      }
+
+      &.success {
+        .validation-message {
+          color: $kermit-green;
+        }
+      }
+
+      .ui.textarea {
+        position: relative;
+
+        textarea {
+          resize: none;
+          padding: 0.375em;
+          background-color: transparent;
+          border: 0;
+          border-radius: 0;
+          line-height: 1.25em;
+          font-weight: 400;
+          font-size: 1rem;
+          box-shadow: inset 0 -1px 0 0 black;
+          width: 100%;
+          border-top: solid 1px black;
+
+          &:focus {
+            outline-color: $primary;
+          }
+
+          &::placeholder {
+            font-weight: 300;
+            color: #495057;
+          }
+
+          &::selection {
+            background-color: transparentize($primary, 0.7);
+          }
+        }
+
+        textarea + .dn-icon {
+          position: absolute;
+          right: 0;
+          top: calc(50% - 12px);
+        }
+
+        &.disabled {
+          opacity: 0.5;
+        }
+      }
+
+      .ui.textarea.length {
+        display: block;
+        text-align: right;
+        font-size: 12px;
+
+        .min-length {
+          color: $color-red;
+          margin-right: 1rem;
+        }
+
+        .value-length {
+          color: #288aff;
+        }
+
+        .max-length {
+          color: #333333;
+        }
+      }
+    }
+  }
+
+  .ui.fluid.container.night {
+    .dn-textarea.field {
+      .ui.textarea {
+        textarea {
+          color: #fff;
+          border-color: #fff;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+
+      .ui.textarea.length {
+        .max-length {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

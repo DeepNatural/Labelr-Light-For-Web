@@ -2,30 +2,32 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css');
-@import "./theme.scss";
-@import "./grid.scss";
-@import "./header.scss";
-@import "./segment.scss";
-@import "./button.scss";
-@import "./checkbox.scss";
-@import "./input.scss";
-@import "./modal.scss";
-@import "./labeling.scss";
-@import "./layout.scss";
-@import "./transition-animations.scss";
-@import "./labels.scss";
-@import "./image.scss";
-@import "./radio-group.scss";
-@import "./flex.scss";
+@import './theme.scss';
+@import './grid.scss';
+@import './header.scss';
+@import './segment.scss';
+@import './button.scss';
+@import './checkbox.scss';
+@import './input.scss';
+@import './modal.scss';
+@import './labeling.scss';
+@import './layout.scss';
+@import './transition-animations.scss';
+@import './labels.scss';
+@import './image.scss';
+@import './radio-group.scss';
+@import './flex.scss';
+@import './textarea.scss';
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-size: 16px !important;
   line-height: 1.5 !important;
   font-family: 'Noto Sans KR', sans-serif !important;
   // overflow: auto !important;
-  
+
   @media (max-width: 768px) {
     font-size: 12px !important;
   }
@@ -34,10 +36,16 @@ html, body {
     font-size: 14px !important;
   }
 
-  strong, .bold { font-weight: 700; }
-  .extra-bold { font-weight: 800; }
-  small, .small {
-    font-size: .75rem;
+  strong,
+  .bold {
+    font-weight: 700;
+  }
+  .extra-bold {
+    font-weight: 800;
+  }
+  small,
+  .small {
+    font-size: 0.75rem;
     line-height: 1em;
     vertical-align: middle;
   }
@@ -45,8 +53,8 @@ html, body {
     font-weight: 300;
   }
 
-  .ui.bulleted.list .list>.item:before,
-  .ui.bulleted.list>.item:before,
+  .ui.bulleted.list .list > .item:before,
+  .ui.bulleted.list > .item:before,
   ul.ui.list li:before {
     font-family: monospace;
   }
@@ -57,7 +65,8 @@ html, body {
       color: map-get($colorSet, font-color) !important;
 
       .ui.header,
-      .ui.checkbox label, .ui.radio label {
+      .ui.checkbox label,
+      .ui.radio label {
         color: inherit !important;
       }
 
@@ -68,14 +77,14 @@ html, body {
     }
   }
 
-  .ui.input>input {
-    padding: .625em 1em;
+  .ui.input > input {
+    padding: 0.625em 1em;
     font-family: 'Noto Sans KR', sans-serif !important;
     font-size: 1em;
   }
 
   .ui.form textarea {
-    padding: .625em 1em;
+    padding: 0.625em 1em;
     line-height: 1.5em;
     font-family: 'Noto Sans KR', sans-serif !important;
     font-size: 1em;
@@ -90,13 +99,13 @@ body {
       width: 6px !important;
       height: 6px !important;
     }
-  
+
     &::-webkit-scrollbar-thumb,
     ::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, .1) !important;
+      background-color: rgba(0, 0, 0, 0.1) !important;
       border-radius: 4px !important;
     }
-  
+
     &::-webkit-scrollbar-track,
     ::-webkit-scrollbar-track {
       background: transparent !important;
@@ -110,17 +119,16 @@ body {
       vertical-align: bottom;
       align-items: center;
       user-select: none;
-      
+
       > img {
         display: inline !important;
       }
-  
+
       .night {
         display: none !important;
       }
     }
   }
-
 
   .ui.fluid.container.day {
     background-color: #fff;
@@ -135,7 +143,7 @@ body {
     overflow-y: hidden;
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, .5) !important;
+      background-color: rgba(0, 0, 0, 0.5) !important;
     }
 
     label {
@@ -150,15 +158,15 @@ body {
       display: flex;
       padding: 1.125rem 1.25rem;
       box-shadow: inset 0 -1px 0 0 #efefef;
-      
+
       > h4 {
         margin: 0;
         flex: 1;
         line-height: 1.25rem;
-        font-size: .875rem;
+        font-size: 0.875rem;
         color: #3a3a3a;
       }
-      
+
       .ui.button.basic {
         margin: 0;
         padding: 0;
@@ -166,9 +174,11 @@ body {
         width: 1.25rem;
         height: 1.25rem;
         box-shadow: none;
-  
-        &:hover, &:active, &:focus {
-          background: rgba(0, 0, 0, .025) !important;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background: rgba(0, 0, 0, 0.025) !important;
         }
       }
     }
@@ -177,7 +187,7 @@ body {
   .ui.fluid.container.night {
     &::-webkit-scrollbar-thumb,
     ::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, .3) !important;
+      background-color: rgba(0, 0, 0, 0.3) !important;
     }
 
     .dn-icon {
@@ -193,7 +203,7 @@ body {
 
 .moving {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .selected {
@@ -220,7 +230,7 @@ body {
     flex: 1;
 
     h4 {
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
   }
 
@@ -232,7 +242,7 @@ body {
     .theme-toggle {
       width: 34px;
 
-      > input[type="checkbox"] {
+      > input[type='checkbox'] {
         display: none;
 
         &:checked + label::before {
@@ -257,7 +267,7 @@ body {
           background-color: #fff;
           border-radius: 50%;
           content: '';
-          transition: transform .25s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+          transition: transform 0.25s cubic-bezier(0.6, -0.28, 0.735, 0.045);
         }
       }
     }
@@ -269,7 +279,7 @@ body {
 
   .progress-wrapper {
     display: flex;
-    padding-right: .75rem;
+    padding-right: 0.75rem;
     align-items: center;
     justify-self: end;
 
@@ -291,14 +301,13 @@ body {
 
   .action-wrapper {
     button.dn.ui.button {
-      margin: 0 .5rem 0 0;
-      
+      margin: 0 0.5rem 0 0;
+
       &:last-child {
         margin-right: 0;
       }
     }
   }
-  
 }
 
 .ui.fluid.container.night {
@@ -358,18 +367,18 @@ body {
   }
 
   .wavesurfer-region {
-    top: .5rem !important;
-    bottom: .5rem !important;
+    top: 0.5rem !important;
+    bottom: 0.5rem !important;
     height: auto !important;
-    border: solid 2px rgba(0, 193, 198, .5);
+    border: solid 2px rgba(0, 193, 198, 0.5);
     border-radius: 4px;
     z-index: 3 !important;
-  
+
     &.selected {
-      box-shadow: 0 0 .25rem .125rem rgba(0, 193, 198, .5);
-      background-color: rgba(0, 193, 198, .3) !important;
+      box-shadow: 0 0 0.25rem 0.125rem rgba(0, 193, 198, 0.5);
+      background-color: rgba(0, 193, 198, 0.3) !important;
     }
-  
+
     .wavesurfer-handle {
       background-color: transparent !important;
     }
